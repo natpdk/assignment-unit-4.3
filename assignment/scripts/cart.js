@@ -3,11 +3,17 @@ console.log('***** Cart Functions *****');
 // We want to see how you are testing your code!!!
 
 let basket = []
+const maxItems = 5
 
-function addItem(item){
-    console.log( 'New Item: ', item);
-    basket.push (item);
-    return true
+function addItem(item) {
+    console.log('New Item: ', item);
+    if (basket.length < maxItems) {
+        basket.push(item);
+        return true
+    }
+    else if (basket.length >= maxItems) {
+        return false
+    }
 } //end addItem
 
 console.log(`Basket is: ${basket}`);
@@ -22,23 +28,22 @@ console.log(`Basket is: ${basket}`);
 console.log('Adding oranges (expect true)', addItem(' oranges'));
 console.log(`Basket is now: ${basket}`)
 
-function listItems(){
-    for (i = 0; i < basket.length; i++) { 
-        console.log( basket )
+function listItems() {
+    for (i = 0; i < basket.length; i++) {
+        console.log(basket)
     }
 } //end listItems
 
-function empty(){
+function empty() {
     basket.length = 0
 } //end empty
 
-const maxItems = 5
 
-function isFull (){
-    if (basket === maxItems){
+function isFull() {
+    if (basket.length === maxItems) {
         return true;
     }
-    else{
+    else {
         return false;
     }
 }
@@ -61,6 +66,6 @@ try {
         isFull: typeof isFull !== 'undefined' ? isFull : undefined,
         removeItem: typeof removeItem !== 'undefined' ? removeItem : undefined,
     };
-} catch(e) {
+} catch (e) {
     // Do nothing
 }
