@@ -32,7 +32,16 @@ function empty(){
     basket.length = 0
 } //end empty
 
+const maxItems = 5
 
+function isFull (){
+    if (basket === maxItems){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
 
 
 
