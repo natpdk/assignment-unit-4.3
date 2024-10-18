@@ -49,7 +49,15 @@ function isFull() {
 }
 
 
-
+function removeItem(item){
+        const index = basket.indexOf(item);
+        if (index !== -1) {
+          basket.splice(index, 1);
+        }
+        return basket;
+}
+console.log( 'Remove item: ', removeItem('bananas'))
+console.log( basket )
 
 
 
